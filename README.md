@@ -17,6 +17,8 @@ This project uses the standard T3 folder structure. We might migrate to a monore
 [] Integrate with Vallaris (requires a good backend architecture to make it not Vallaris-dependent).
 [] Theme system with MUI (once we have the design)
 [] CI/CD
+[] Add alicense file
+[] Add a testing library
 
 # TODO list for docs (what we need to add to this file)
 [] Better docs
