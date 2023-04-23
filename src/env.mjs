@@ -8,6 +8,7 @@ const server = z.object({
     NODE_ENV: z.enum(["development", "test", "production"]),
     VALLARIS_ENDPOINT: z.string(),
     VALLARIS_API_KEY: z.string(),
+    VALLARIS_COLLECTION_ID: z.string(),
 });
 
 /**
@@ -28,7 +29,7 @@ const processEnv = {
     NODE_ENV: process.env.NODE_ENV,
     VALLARIS_ENDPOINT: process.env.VALLARIS_ENDPOINT,
     VALLARIS_API_KEY: process.env.VALLARIS_API_KEY,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    VALLARIS_COLLECTION_ID: process.env.VALLARIS_COLLECTION_ID,
 };
 
 // Don't touch the part below
