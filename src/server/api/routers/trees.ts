@@ -28,9 +28,9 @@ export const treesRouter = createTRPCRouter({
         )
         .query(async ({ ctx, input }) => {
             const { boundingBox, limit } = input;
-            if (boundingBox?.length !== 4) {
+            if (boundingBox && boundingBox.length !== 4) {
                 throw new TRPCError({
-                    message: "Bounding box should have a length of 4",
+                    message: "boundingBox should have a length of 4",
                     code: "BAD_REQUEST",
                 });
             }

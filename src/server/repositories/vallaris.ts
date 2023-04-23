@@ -39,19 +39,33 @@ import { TreesResponse } from "../models/trees/treesResponse";
 const vallarisRepository = {
     baseURL: process.env.VALLARIS_ENDPOINT,
     collectionId: "6444e234b4b978478bef26f1",
-    getTrees: function (request: TreesRequestParams): Promise<TreesResponse> {
-        // TODO have a common axios config for stuff like base url, headers, etc.
-        return axios({
-            method: "get",
-            baseURL:
-                this.baseURL +
-                `/features/1.0/collections/${this.collectionId}/items`,
-            headers: {
-                "Content-Type": "application/json",
-                "api-key": process.env.VALLARIS_API_KEY,
-            },
-            params: request,
-        });
+    getTrees: async function (
+        request: TreesRequestParams
+    ): Promise<TreesResponse> {
+        // TODO have a common axios config for stuff like base url, headers, timeout, etc.
+        try {
+            const data = await axios({
+                method: "get",
+                baseURL:
+                    this.baseURL +
+                    `/features/1.0/collections/${this.collectionId}/items`,
+                headers: {
+                    "Content-Type": "application/json",
+                    "api-key": process.env.VALLARIS_API_KEY,
+                },
+                params: request,
+                timeout: 30 * 1000,
+            });
+            return data.data;
+        } catch (error) {
+            console.error(error);
+            // TODO maybe handle this error differently for a better UX?
+            // Force return an empty array.
+            return Promise.resolve({
+                type: "FeatureCollection",
+                features: [],
+            } as TreesResponse);
+        }
     },
 };
 
