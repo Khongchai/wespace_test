@@ -10,9 +10,9 @@ TODO
 # General TODO list 
 
 [x] Bring in maplibre
-[] Connect to Vallaris through React Query and expose some public-facing APIs. This is because we'd want other people to be able to call our endpoint as well.
-[] Integrate with Vallaris (requires a good backend architecture to make it not Vallaris-dependent).
+[x] Integrate with Vallaris (requires a good backend architecture to make it not Vallaris-dependent).
 
+[] Integrate https://github.com/jlalmes/trpc-openapi to integrate open-api specs (and also document it here)
 [] Open source the map style
 [] Code of conduct
 [] More stuff to this todo list
@@ -20,7 +20,6 @@ TODO
 [] CI/CD
 [] Add alicense file
 [] Add a testing library
-[] Integrate https://github.com/jlalmes/trpc-openapi to integrate open-api specs (and also document it here)
 
 # TODO list for docs (what we need to add to this file)
 [] Better docs
