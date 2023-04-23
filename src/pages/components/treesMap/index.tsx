@@ -6,9 +6,9 @@ import { api } from "~/utils/api";
 
 // This needs to be a client side component
 const TreesMap = () => {
-    // TODO remove example
-    const { isLoading, data: trees } = api.trees.getAll.useQuery({});
-    console.log(trees);
+    // Example
+    // const { isLoading, data: trees } = api.trees.getAll.useQuery({});
+    // console.log(trees);
 
     const map = useRef<maplibregl.Map>();
     useEffect(() => {
